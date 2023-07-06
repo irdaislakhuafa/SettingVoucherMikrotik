@@ -8,3 +8,6 @@ services:
     environment:
       - DISPLAY=$DISPLAY
     privileged: false
+    volumes:
+      - "/tmp:/tmp"
+
