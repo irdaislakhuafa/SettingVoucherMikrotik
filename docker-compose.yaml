@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  mikrotik-utils:
+    image: irdaislakhuafa/mikrotik-utils:latest
+    container_name: mikrotik-utils
+    network_mode: host
+    environment:
+      - DISPLAY=$DISPLAY
+    privileged: false
