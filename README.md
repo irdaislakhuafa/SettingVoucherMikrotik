@@ -1,6 +1,6 @@
 # Tools
-- `winbox`
-- `mikhmon`
+- [`winbox`](https://mt.lv/winbox)
+- [`mikhmon`](https://github.com/laksa19/mikhmonv3)
 - `RJ45`
 - `ISP`
 - `Mikrotik` `
@@ -80,4 +80,35 @@
     - Primary NTP Server: `0.id.pool.ntp.org` 
     - Secondary NTP Server: `1.id.pool.ntp.org` 
 
+- ## Mikhmon
+    - Tambahkan group baru dengan nama `mikhmon` atau ubah sesuai keinginan anda, dengan akses berikut :
+        - [x] `read` 
+        - [x] `write` 
+        - [x] `api` 
+        - [x] `sensitive` 
+    - Tambahkan user baru di `Mikrotik` dengan group `mikhmon` diatas
+    - Buka [`mikhmon`](https://github.com/laksa19/mikhmonv3) dan jalankan lalu login dengan username dan password default
+        - `username` : mikhmon
+        - `password` : 1234
+        
+        lalu masuk ke `[+] Add Router > Session Settings` dengan konfigurasi sebagai berikut
+        - Session Name : `{any}`
+        - IP Mikrotik  : `{insert your mikrotik IP here}`
+        - Username     : `{mikrotik user for mikhmon here}`
+        - Password     : `{mikrotik password for mikhmon here}`
+        - Hotspot Name : `{your hotspot name here}`
+        - DNS Name     : `{your url login here}`
+       
+       `Save` dan coba tekan `Ping` jika mendapat response `Ok` maka tekan `Connect`    
+    - Untuk menambah profil/tipe voucher masuk ke `Hotspot > User Profile > Add Profile` berikut penjelasan konfigurasinya
+        - Name             : nama profile (misalkan 5 jam/1 hari/1 minggu/dll)
+        - Address Pool     : karena address pool sudah di tangani mikrotik dari konfigurasi diatas maka ini bisa dibiarkan `default`
+        - Shared Users     : jumlah user yang bisa memakai 1 voucher
+        - Rate Limit       : batasan kecepatan internet untuk 1 voucher
+        - Expired Mode     : apa yang akan mikrotik lakukan ketika masa aktif atau uptime usernya habis (`Remove and Record` direkomendasikan)
+        - Validaty         : berapa lama kode voucher ini akan berlaku? (misalkan 5 jam)
+        - Price Rp         : harga beli
+        - Selling Price Rp : harga jual
+        - Lock User        : kunci voucher agar hanya dapat digunakan untuk 1 perangkat (misalkan `Disable`)
+    
 
